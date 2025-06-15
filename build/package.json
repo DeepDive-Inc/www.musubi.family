@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@xofeulb/bluefox-domgate": "github:xoFeulB/BlueFoxDomGate",
+    "chokidar": "^4.0.3"
+  }
+}

@@ -1,0 +1,107 @@
+.fa-brands.fa-line {
+  color: #06c755;
+}
+
+.fa-brands.fa-instagram {
+  color: #ff2959;
+}
+
+[EyeCatch] {
+  width: 100%;
+  min-height: 40vh;
+  background-image: url("/media/header.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  box-sizing: border-box;
+  position: relative;
+}
+
+[SideNav] {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 256px;
+  overflow: scroll;
+  z-index: 1000;
+}
+
+[SideNavHeader] {
+  position: sticky;
+  top: 0;
+  z-index: 1002;
+}
+
+[SideNavFooter] {
+  position: sticky;
+  bottom: 0;
+  z-index: 1001;
+}
+
+[NavItem] {
+  display: block;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  color: var(--c-light);
+}
+
+[NavItem]:hover {
+  background-color: var(--theme-main);
+  color: var(--c-light);
+  text-decoration: none;
+}
+
+[Cover] {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.0;
+  pointer-events: none;
+  background-color: black;
+}
+
+@media (max-width: 960px) {
+  [SideNav] {
+    position: fixed;
+    left: -256px;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+  }
+}
+
+[FloatTip] {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  margin-right: 15px !important;
+  margin-bottom: 15px !important;
+  z-index: 2000;
+}
+
+[FloatTip]>button {
+  background-color: #ffa500;
+  color: var(--theme-dark);
+  padding: 10px 20px 10px 20px;
+  width: 170px;
+  height: 56px;
+  text-align: center;
+}
+
+[FloatTip] [text] {
+  opacity: 1;
+}
+
+.text-emphasis {
+  font-size: 1.1em;
+}
+
+#Modal-burlywood>.uk-modal-dialog {
+  background: transparent;
+}
+
+#Modal-maroon>.uk-modal-dialog {
+  background: transparent;
+}
