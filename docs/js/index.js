@@ -45,7 +45,7 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
                   easing: "ease-in-out"
                 },
                 {
-                  width: "170px",
+                  width: "180px",
                   easing: "ease-in-out"
                 }
               ],
