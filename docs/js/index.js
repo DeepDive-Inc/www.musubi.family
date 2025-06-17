@@ -86,7 +86,7 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
               ],
               {
                 duration: 500,
-                delay: 200,
+                delay: 3000,
                 fill: "forwards",
               }
             );
@@ -226,6 +226,12 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
           }
 
           UIkit.modal(document.querySelector("#Modal-CheckForm")).show();
+        });
+      },
+      '[Focus="contact"]': async ($) => {
+        $.element.addEventListener("click", (event) => {
+          document.querySelector("[Cover]").dispatchEvent(new Event("click"));
+          document.querySelector("[inquiry]").scrollIntoView({ behavior: "smooth", block: "start" });
         });
       },
     }
