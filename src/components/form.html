@@ -1,3 +1,5 @@
+<gate src="/components/ご利用の流れ.html"></gate>
+
 <div>
   <form Contact class="uk-form-stacked">
     <legend class="uk-legend">Webフォーム</legend>
@@ -68,43 +70,43 @@
       <div class="uk-modal-body" uk-overflow-auto>
         <div class="uk-margin">
           <div class="uk-text-bold">お名前</div>
-          <div class="uk-padding-small-left">
+          <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Name].value" to="this.textContent" events='["input"]'></sync-view>
           </div>
         </div>
         <div class="uk-margin">
           <span class="uk-text-bold">ご住所</span>
-          <div class="uk-padding-small-left">
+          <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Location].value" to="this.textContent" events='["input"]'></sync-view>
           </div>
         </div>
         <div class="uk-margin">
           <span class="uk-text-bold">メールアドレス</span>
-          <div class="uk-padding-small-left">
+          <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Contact].value" to="this.textContent" events='["input"]'></sync-view>
           </div>
         </div>
         <div class="uk-margin">
           <span class="uk-text-bold">電話番号</span>
-          <div class="uk-padding-small-left">
+          <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Tel].value" to="this.textContent" events='["input"]' default="なし"></sync-view>
           </div>
         </div>
         <div class="uk-margin">
           <span class="uk-text-bold">カウンセリング希望日時</span>
-          <div class="uk-padding-small-left">
+          <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Booking].value" to="this.textContent" events='["input"]' style="white-space: pre;" default="なし"></sync-view>
           </div>
         </div>
         <div class="uk-margin">
           <span class="uk-text-bold">ペットの種類・頭数</span>
-          <div class="uk-padding-small-left">
+          <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Group].value" to="this.textContent" events='["input"]' style="white-space: pre;" default="なし"></sync-view>
           </div>
         </div>
         <div class="uk-margin">
           <span class="uk-text-bold">その他のお問い合わせ</span>
-          <div class="uk-padding-small-left">
+          <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Other].value" to="this.textContent" events='["input"]' style="white-space: pre;" default="なし"></sync-view>
           </div>
         </div>
