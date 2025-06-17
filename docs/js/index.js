@@ -132,6 +132,10 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
         observer.observe(document.querySelector("[TopNav]>[NonStick]"));
 
         $.element.addEventListener("click", (event) => {
+          [...document.querySelectorAll("[uk-modal]")].forEach((element) => {
+            UIkit.modal(element).hide();
+          });
+
           document.querySelector("[inquiry]").scrollIntoView({ behavior: "smooth", block: "start" });
         });
       },
