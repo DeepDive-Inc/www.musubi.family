@@ -4,10 +4,16 @@
   <div hidden>
     <select id="form-controll">
       <option>form</option>
+      <option>spinner</option>
       <option>ok</option>
       <option>ng</option>
     </select>
   </div>
+  <show-when target="#form-controll.value" regex="spinner" events='["sync", "change"]' in="fade.300" out="fade.300">
+    <div class="uk-text-large uk-text-center">
+      <span uk-spinner="ratio: 4.5"></span>
+    </div>
+  </show-when>
   <show-when target="#form-controll.value" regex="ng" events='["sync", "change"]' in="fade.300" out="fade.300">
     <div class="uk-text-large uk-margin-bottom c-red">
       <i class="fa-solid fa-triangle-exclamation uk-margin-small-right"></i>
