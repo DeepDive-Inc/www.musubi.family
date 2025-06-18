@@ -134,6 +134,10 @@ show-when {
   color: tomato;
 }
 
+.c-green {
+  color: limegreen;
+}
+
 .divider-icon {
   margin-top: 25px;
   margin-bottom: 25px;
