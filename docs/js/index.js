@@ -242,6 +242,7 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
         $.element.addEventListener("click", async (event) => {
           try {
             document.querySelector("#form-controll").value = "spinner";
+            document.querySelector("#form-controll").dispatchEvent(new Event("sync"));
             await fetch(
               "https://api.musubi.family/ApplyForm.php",
               {
@@ -253,12 +254,13 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
               }
             );
             document.querySelector("#form-controll").value = "ok";
+            document.querySelector("#form-controll").dispatchEvent(new Event("sync"));
           } catch {
             document.querySelector("#form-controll").value = "ng";
+            document.querySelector("#form-controll").dispatchEvent(new Event("sync"));
           }
 
           document.querySelector("[Cover]").dispatchEvent(new Event("click"));
-          document.querySelector("#form-controll").dispatchEvent(new Event("sync"));
         });
       },
     }
