@@ -241,6 +241,7 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
       '[ApplyForm]': async ($) => {
         $.element.addEventListener("click", async (event) => {
           try {
+            document.querySelector("#form-controll").value = "spinner";
             await fetch(
               "https://api.musubi.family/ApplyForm.php",
               {
