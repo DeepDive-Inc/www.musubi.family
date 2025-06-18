@@ -1,62 +1,83 @@
 <gate src="/components/ご利用の流れ.html"></gate>
 
 <div>
-  <form Contact class="uk-form-stacked">
-    <legend class="uk-legend">Webフォーム</legend>
-    <div>
-      <div class="uk-margin">
-        <label>
-          <span class="uk-text-bold">お名前</span>
-          <i class="usn fa-asterisk c-red uk-text-small uk-margin-small-left">必須</i>
-          <input name="Name" class="uk-input radius" type="text" maxlength="150" placeholder="お名前を入力してください" required>
-        </label>
-      </div>
-      <div class="uk-margin">
-        <label>
-          <span class="uk-text-bold">ご住所</span>
-          <i class="usn fa-asterisk c-red uk-text-small uk-margin-small-left">必須</i>
-          <input name="Location" class="uk-input radius" type="text" maxlength="150" placeholder="ご住所を入力してください" required>
-        </label>
-      </div>
-      <div class="uk-margin">
-        <label>
-          <span class="uk-text-bold">メールアドレス</span>
-          <i class="usn fa-asterisk c-red uk-text-small uk-margin-small-left">必須</i>
-          <input name="Contact" class="uk-input radius" type="email" maxlength="150" placeholder="メールアドレスを入力してください" required>
-        </label>
-      </div>
-      <div class="uk-margin">
-        <label>
-          <span class="uk-text-bold">電話番号</span>
-          <input name="Tel" class="uk-input radius" type="tel" maxlength="150" placeholder="電話番号を入力してください">
-        </label>
-      </div>
-      <div class="uk-margin">
-        <label>
-          <span class="uk-text-bold">カウンセリング希望日時（初回の方のみ）</span>
-          <textarea name="Booking" class="uk-textarea radius" rows="5" placeholder="カウンセリング希望日時（複数可）を入力してください" aria-label="Textarea"></textarea>
-        </label>
-      </div>
-      <div class="uk-margin">
-        <label>
-          <span class="uk-text-bold">ペットの種類・頭数</span>
-          <textarea name="Group" class="uk-textarea radius" rows="5" placeholder="ペットの種類・頭数を入力してください" aria-label="Textarea"></textarea>
-        </label>
-      </div>
-      <div class="uk-margin">
-        <label>
-          <span class="uk-text-bold">その他のお問い合わせ</span>
-          <textarea name="Other" class="uk-textarea radius" rows="5" placeholder="その他のお問い合わせの場合はこちらにご入力ください" aria-label="Textarea"></textarea>
-        </label>
-      </div>
+  <div hidden>
+    <select id="form-controll">
+      <option>form</option>
+      <option>ok</option>
+      <option>ng</option>
+    </select>
+  </div>
+  <show-when target="#form-controll.value" regex="ng" events='["sync", "change"]' in="fade.300" out="fade.300">
+    <div class="uk-text-large uk-margin-bottom c-red">
+      <i class="fa-solid fa-triangle-exclamation uk-margin-small-right"></i>
+      <span>送信に失敗しました。お手数ですが、しばらく時間をおいてからお問い合わせいただくか、お電話、公式SNSからお問い合わせください。</span>
     </div>
-    <div class="divider-icon">
-      <i class="fa-solid fa-paw"></i>
+  </show-when>
+  <show-when target="#form-controll.value" regex="(form|ng)" events='["sync", "change"]' in="fade.300" out="fade.300">
+    <form Contact class="uk-form-stacked">
+      <legend class="uk-legend">Webフォーム</legend>
+      <div>
+        <div class="uk-margin">
+          <label>
+            <span class="uk-text-bold">お名前</span>
+            <i class="usn fa-asterisk c-red uk-text-small uk-margin-small-left">必須</i>
+            <input name="Name" class="uk-input radius" type="text" maxlength="150" placeholder="お名前を入力してください" required>
+          </label>
+        </div>
+        <div class="uk-margin">
+          <label>
+            <span class="uk-text-bold">ご住所</span>
+            <i class="usn fa-asterisk c-red uk-text-small uk-margin-small-left">必須</i>
+            <input name="Location" class="uk-input radius" type="text" maxlength="150" placeholder="ご住所を入力してください" required>
+          </label>
+        </div>
+        <div class="uk-margin">
+          <label>
+            <span class="uk-text-bold">メールアドレス</span>
+            <i class="usn fa-asterisk c-red uk-text-small uk-margin-small-left">必須</i>
+            <input name="Contact" class="uk-input radius" type="email" maxlength="150" placeholder="メールアドレスを入力してください" required>
+          </label>
+        </div>
+        <div class="uk-margin">
+          <label>
+            <span class="uk-text-bold">電話番号</span>
+            <input name="Tel" class="uk-input radius" type="tel" maxlength="150" placeholder="電話番号を入力してください">
+          </label>
+        </div>
+        <div class="uk-margin">
+          <label>
+            <span class="uk-text-bold">カウンセリング希望日時（初回の方のみ）</span>
+            <textarea name="Booking" class="uk-textarea radius" rows="5" placeholder="カウンセリング希望日時（複数可）を入力してください" aria-label="Textarea"></textarea>
+          </label>
+        </div>
+        <div class="uk-margin">
+          <label>
+            <span class="uk-text-bold">ペットの種類・頭数</span>
+            <textarea name="Group" class="uk-textarea radius" rows="5" placeholder="ペットの種類・頭数を入力してください" aria-label="Textarea"></textarea>
+          </label>
+        </div>
+        <div class="uk-margin">
+          <label>
+            <span class="uk-text-bold">その他のお問い合わせ</span>
+            <textarea name="Other" class="uk-textarea radius" rows="5" placeholder="その他のお問い合わせの場合はこちらにご入力ください" aria-label="Textarea"></textarea>
+          </label>
+        </div>
+      </div>
+      <div class="divider-icon">
+        <i class="fa-solid fa-paw"></i>
+      </div>
+      <div class="uk-margin uk-text-right">
+        <button CheckForm type="button" class="uk-button uk-button-default uk-text-bold radius bg-theme-dark c-theme-white">入力内容を確認する</button>
+      </div>
+    </form>
+  </show-when>
+  <show-when target="#form-controll.value" regex="ok" events='["sync", "change"]' in="fade.300" out="fade.300">
+    <div class="uk-text-large uk-text-center c-green">
+      <i class="fa-solid fa-circle-check uk-margin-small-right"></i>
+      <span>お問い合わせを承りました！</span>
     </div>
-    <div class="uk-margin uk-text-right">
-      <button CheckForm type="button" class="uk-button uk-button-default uk-text-bold radius bg-theme-dark c-theme-white">入力内容を確認する</button>
-    </div>
-  </form>
+  </show-when>
 
   <div id="Modal-CheckForm" uk-modal>
     <div class="uk-modal-dialog radius">
@@ -69,43 +90,43 @@
 
       <div class="uk-modal-body" uk-overflow-auto>
         <div class="uk-margin">
-          <div class="uk-text-bold">お名前</div>
+          <div class="uk-text-bold uk-heading-bullet">お名前</div>
           <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Name].value" to="this.textContent" events='["input"]'></sync-view>
           </div>
         </div>
         <div class="uk-margin">
-          <span class="uk-text-bold">ご住所</span>
+          <span class="uk-text-bold uk-heading-bullet">ご住所</span>
           <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Location].value" to="this.textContent" events='["input"]'></sync-view>
           </div>
         </div>
         <div class="uk-margin">
-          <span class="uk-text-bold">メールアドレス</span>
+          <span class="uk-text-bold uk-heading-bullet">メールアドレス</span>
           <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Contact].value" to="this.textContent" events='["input"]'></sync-view>
           </div>
         </div>
         <div class="uk-margin">
-          <span class="uk-text-bold">電話番号</span>
+          <span class="uk-text-bold uk-heading-bullet">電話番号</span>
           <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Tel].value" to="this.textContent" events='["input"]' default="なし"></sync-view>
           </div>
         </div>
         <div class="uk-margin">
-          <span class="uk-text-bold">カウンセリング希望日時</span>
+          <span class="uk-text-bold uk-heading-bullet">カウンセリング希望日時</span>
           <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Booking].value" to="this.textContent" events='["input"]' style="white-space: pre;" default="なし"></sync-view>
           </div>
         </div>
         <div class="uk-margin">
-          <span class="uk-text-bold">ペットの種類・頭数</span>
+          <span class="uk-text-bold uk-heading-bullet">ペットの種類・頭数</span>
           <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Group].value" to="this.textContent" events='["input"]' style="white-space: pre;" default="なし"></sync-view>
           </div>
         </div>
         <div class="uk-margin">
-          <span class="uk-text-bold">その他のお問い合わせ</span>
+          <span class="uk-text-bold uk-heading-bullet">その他のお問い合わせ</span>
           <div class="uk-margin-small-left">
             <sync-view from="form[Contact] [name=Other].value" to="this.textContent" events='["input"]' style="white-space: pre;" default="なし"></sync-view>
           </div>
@@ -113,7 +134,7 @@
       </div>
       <div class="uk-modal-footer uk-text-right radius-bottom">
         <button BackForm type="button" class="uk-button uk-button-default uk-text-bold radius uk-modal-close uk-margin-small-right">入力内容を修正する</button>
-        <button ApplyForm type="button" class="uk-button uk-button-default uk-text-bold radius bg-theme-dark c-theme-white">送信</button>
+        <button ApplyForm type="button" class="uk-button uk-button-default uk-text-bold radius uk-modal-close bg-theme-dark c-theme-white">送信</button>
       </div>
 
     </div>

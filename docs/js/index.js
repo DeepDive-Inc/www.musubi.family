@@ -240,16 +240,24 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
       },
       '[ApplyForm]': async ($) => {
         $.element.addEventListener("click", async (event) => {
-          await fetch(
-            "https://api.musubi.family/ApplyForm.php",
-            {
-              method: "post",
-              body: JSON.stringify(Object.fromEntries((new FormData(document.querySelector(`form[Contact]`))).entries())),
-              headers: {
-                "Content-type": "application/json; charset=utf-8",
+          try {
+            await fetch(
+              "https://api.musubi.family/ApplyForm.php",
+              {
+                method: "post",
+                body: JSON.stringify(Object.fromEntries((new FormData(document.querySelector(`form[Contact]`))).entries())),
+                headers: {
+                  "Content-type": "application/json; charset=utf-8",
+                }
               }
-            }
-          );
+            );
+            document.querySelector("#form-controll").value = "ok";
+          } catch {
+            document.querySelector("#form-controll").value = "ng";
+          }
+
+          document.querySelector("[Cover]").dispatchEvent(new Event("click"));
+          document.querySelector("#form-controll").dispatchEvent(new Event("sync"));
         });
       },
     }
