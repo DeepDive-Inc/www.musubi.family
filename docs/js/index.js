@@ -238,6 +238,20 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
           document.querySelector("[inquiry]").scrollIntoView({ behavior: "smooth", block: "start" });
         });
       },
+      '[ApplyForm]': async ($) => {
+        $.element.addEventListener("click", async (event) => {
+          await fetch(
+            "https://api.musubi.family/ApplyForm.php",
+            {
+              method: "post",
+              body: JSON.stringify(Object.fromEntries((new FormData(document.querySelector(`form[Contact]`))).entries())),
+              headers: {
+                "Content-type": "application/json; charset=utf-8",
+              }
+            }
+          );
+        });
+      },
     }
   );
 })();
