@@ -9,18 +9,18 @@
       <option>ng</option>
     </select>
   </div>
-  <show-when target="#form-controll.value" regex="spinner" events='["sync", "change"]' in="fade.300" out="fade.300">
+  <show-when target="#form-controll.value" regex="spinner" events='["sync", "change"]' in="none.0" out="none.0">
     <div class="uk-text-large uk-text-center">
       <span uk-spinner="ratio: 4.5"></span>
     </div>
   </show-when>
-  <show-when target="#form-controll.value" regex="ng" events='["sync", "change"]' in="fade.300" out="fade.300">
+  <show-when target="#form-controll.value" regex="ng" events='["sync", "change"]' in="none.0" out="none.0">
     <div class="uk-text-large uk-margin-bottom c-red">
       <i class="fa-solid fa-triangle-exclamation uk-margin-small-right"></i>
       <span>送信に失敗しました。お手数ですが、しばらく時間をおいてからお問い合わせいただくか、お電話、公式SNSからお問い合わせください。</span>
     </div>
   </show-when>
-  <show-when target="#form-controll.value" regex="(form|ng)" events='["sync", "change"]' in="fade.300" out="fade.300">
+  <show-when target="#form-controll.value" regex="(form|ng)" events='["sync", "change"]' in="none.0" out="none.0">
     <form Contact class="uk-form-stacked">
       <legend class="uk-legend">Webフォーム</legend>
       <div>
@@ -78,7 +78,7 @@
       </div>
     </form>
   </show-when>
-  <show-when target="#form-controll.value" regex="ok" events='["sync", "change"]' in="fade.300" out="fade.300">
+  <show-when target="#form-controll.value" regex="ok" events='["sync", "change"]' in="none.0" out="none.0">
     <div class="uk-text-large uk-text-center c-green">
       <i class="fa-solid fa-circle-check uk-margin-small-right"></i>
       <span>お問い合わせを承りました！</span>
@@ -87,7 +87,6 @@
 
   <div id="Modal-CheckForm" uk-modal>
     <div class="uk-modal-dialog radius">
-
       <button class="uk-modal-close-default" type="button" uk-close></button>
 
       <div class="uk-modal-header radius-top">
@@ -142,7 +141,6 @@
         <button BackForm type="button" class="uk-button uk-button-default uk-text-bold radius uk-modal-close uk-margin-small-right">入力内容を修正する</button>
         <button ApplyForm type="button" class="uk-button uk-button-default uk-text-bold radius uk-modal-close bg-theme-dark c-theme-white">送信</button>
       </div>
-
     </div>
   </div>
 </div>
