@@ -247,6 +247,7 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
             for (let [key, value] of Object.entries(data)) {
               data[key] = value ? value : "なし";
             }
+            data["ref"] = location.href;
             await fetch(
               "https://api.musubi.family/ApplyForm.php",
               {
