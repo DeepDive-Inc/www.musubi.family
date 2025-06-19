@@ -105,3 +105,7 @@
 #Modal-maroon>.uk-modal-dialog {
   background: transparent;
 }
+
+#Modal-CheckForm {
+  z-index: 3000;
+}

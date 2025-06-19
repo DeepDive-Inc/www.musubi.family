@@ -243,11 +243,15 @@ import { BlueFoxJs } from "/modules/BlueFoxJs/bluefox-js.es.min.js";
           try {
             document.querySelector("#form-controll").value = "spinner";
             document.querySelector("#form-controll").dispatchEvent(new Event("sync"));
+            let data = Object.fromEntries((new FormData(document.querySelector(`form[Contact]`))).entries());
+            for (let [key, value] of Object.entries(data)) {
+              data[key] = value ? value : "なし";
+            }
             await fetch(
               "https://api.musubi.family/ApplyForm.php",
               {
                 method: "post",
-                body: JSON.stringify(Object.fromEntries((new FormData(document.querySelector(`form[Contact]`))).entries())),
+                body: JSON.stringify(data),
                 headers: {
                   "Content-type": "application/json; charset=utf-8",
                 }
