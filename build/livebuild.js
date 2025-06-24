@@ -18,6 +18,10 @@ let gate_map = [
     index: "../src/faq.html",
     out: "../docs/faq.html",
   },
+  {
+    index: "../src/service.html",
+    out: "../docs/service.html",
+  },
 ];
 watch("../src").on("all", async (event, path) => {
   console.log(event, path);
