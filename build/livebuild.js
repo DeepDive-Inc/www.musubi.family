@@ -1,28 +1,14 @@
 import { watch } from "chokidar";
 import { BlueFoxDomGate } from "@xofeulb/bluefox-domgate";
+import fs from "fs";
 
-let gate_map = [
-  {
-    index: "../src/index.html",
-    out: "../docs/index.html",
-  },
-  {
-    index: "../src/staff.html",
-    out: "../docs/staff.html",
-  },
-  {
-    index: "../src/privacypolicy.html",
-    out: "../docs/privacypolicy.html",
-  },
-  {
-    index: "../src/faq.html",
-    out: "../docs/faq.html",
-  },
-  {
-    index: "../src/service.html",
-    out: "../docs/service.html",
-  },
-];
+let gate_map = [];
+
+watch("./config.json").on("all", async (event, path) => {
+  console.log(event, path);
+  gate_map = JSON.parse(fs.readFileSync("./config.json", "utf8"));
+});
+
 watch("../src").on("all", async (event, path) => {
   console.log(event, path);
   gate_map.forEach((_) => {

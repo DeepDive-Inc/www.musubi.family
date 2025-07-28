@@ -1,0 +1,26 @@
+[
+  {
+    "index": "../src/index.html",
+    "out": "../docs/index.html"
+  },
+  {
+    "index": "../src/staff.html",
+    "out": "../docs/staff.html"
+  },
+  {
+    "index": "../src/privacypolicy.html",
+    "out": "../docs/privacypolicy.html"
+  },
+  {
+    "index": "../src/faq.html",
+    "out": "../docs/faq.html"
+  },
+  {
+    "index": "../src/service.html",
+    "out": "../docs/service.html"
+  },
+  {
+    "index": "../src/termsofservice.html",
+    "out": "../docs/termsofservice.html"
+  }
+]
