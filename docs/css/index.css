@@ -14,6 +14,69 @@
   background-size: cover;
   box-sizing: border-box;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+[EyeCatch]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      #0000004d 0%,
+      #00000033 50%,
+      #00000066 100%);
+  z-index: 1;
+}
+
+[EyeCatch] .logo-text {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+[EyeCatch] .logo-text .welcome {
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+[EyeCatch] .logo-text .main-logo {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HGS明朝E", "MS P明朝", "MS Mincho", serif;
+}
+
+[EyeCatch] .logo-text .subtitle {
+  font-size: 1.1rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  display: block;
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HGS明朝E", "MS P明朝", "MS Mincho", serif;
+}
+
+@media (max-width: 768px) {
+  [EyeCatch] .logo-text .welcome {
+    font-size: 1rem;
+  }
+
+  [EyeCatch] .logo-text .main-logo {
+    font-size: 3rem;
+  }
+
+  [EyeCatch] .logo-text .subtitle {
+    font-size: 0.9rem;
+  }
 }
 
 [SideNav] {
