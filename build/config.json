@@ -22,5 +22,9 @@
   {
     "index": "../src/termsofservice.html",
     "out": "../docs/termsofservice.html"
+  },
+  {
+    "index": "../src/pricing.html",
+    "out": "../docs/pricing.html"
   }
 ]
