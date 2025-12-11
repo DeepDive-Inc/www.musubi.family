@@ -21,7 +21,8 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-[EyeCatch]::before {
+[EyeCatch] before {
+  display: block;
   content: '';
   position: absolute;
   top: 0;
