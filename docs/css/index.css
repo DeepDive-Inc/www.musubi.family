@@ -6,11 +6,6 @@
   color: #ff2959;
 }
 
-[HeaderVideo] {
-  max-height: 80lvh;
-}
-
-
 [SideNav] {
   position: sticky;
   top: 0;
@@ -103,4 +98,68 @@
 
 #Modal-CheckForm {
   z-index: 3000;
+}
+
+
+.split-header {
+  display: flex;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.header-content {
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.header-media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--theme-main);
+}
+
+.header-media video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .split-header {
+    flex-direction: column-reverse;
+  }
+
+  .header-content {
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .split-header {
+    flex-direction: row;
+    min-height: 100vh;
+  }
+
+  .header-content {
+    width: 50%;
+    padding: 0 5%;
+  }
+
+  .header-media {
+    width: 50%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-media video {
+    width: 100%;
+    height: 100%;
+  }
 }
