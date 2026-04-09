@@ -1,5 +1,9 @@
 {
   "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node livebuild.js"
+  },
   "dependencies": {
     "@xofeulb/bluefox-domgate": "github:xoFeulB/BlueFoxDomGate",
     "chokidar": "^4.0.3"
