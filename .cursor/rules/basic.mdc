@@ -1,0 +1,37 @@
+---
+alwaysApply: true
+---
+
+# www.musubi.family（本リポジトリ）
+
+## 目的
+
+Musubi Family の公開用静的サイト。ソースは `src`、ビルド成果物は `docs` に置き、GitHub Pages でホストされる想定（`docs/CNAME` なども参照）。
+
+## ディレクトリの役割
+
+- **`src/`** — 編集する本体。エントリ HTML（`index.html`、`staff.html` など）と、`components/` 以下の HTML 断片。
+- **`docs/`** — GitHub Pages 向けの公開ルート。ゲートビルドで **HTML だけ** が `build/config.json` の `out` 先に書き込まれる。それ以外の静的ファイルは **`src` からはビルドされない**（例: `docs/js/`、`docs/css/`、ベンダー系の `docs/modules/` など）。これらは **最初から `docs` に置き、そこで編集・管理する** 前提。Font Awesome や UIkit なども同様に `docs` 直下で完結する。
+- **`build/`** — Node（ESM）のビルドスクリプトと設定。ルートに `package.json` はなく、依存は `build/package.json` で管理。
+
+## ビルドと設定
+
+- **`build/config.json`** — エントリ HTML ごとに `index`（`src` 側パス）と `out`（`docs` 側パス）の対応を配列で定義する。新規ページを足す場合はここにもエントリを追加する。
+- **`build/livebuild.js`** — `chokidar` で `build/config.json` と `../src` を監視し、変更時に各マッピングに対して `BlueFoxDomGate.connect(...)` を実行して `docs` へ HTML を生成する。
+- **`build/build.js`** — 上記と同じマッピングを **1 回だけ** 処理する単発ビルド（ウォッチなし）。CI やエージェントが `docs` を再生成するときに使う。
+
+## Gate（`<gate>`）と BlueFoxDomGate
+
+- ソース HTML では `<gate src="相対パス"></gate>` で別 HTML を取り込み、1 本の静的 HTML に展開する。
+- npm パッケージ名は **`@xofeulb/bluefox-domgate`**（`build/package.json` の依存）。実装の参照用に、ローカルでは **`c:\Users\Lobelia\Documents\GitHub\BlueFoxEnterprise\BlueFoxDomGate`** のソース（`BlueFoxDomGate.connect` と `<gate>` の解決ロジック）を見るとよい。
+- ゲートの挙動・API の要約は当該リポジトリの `README.md`（`connect` の引数: index, root, out, depth, prettier, minify）に沿う。
+
+## エージェント向けメモ
+
+- ページ本文やレイアウトの変更は原則 **`src/`** を編集し、ビルド後 **`docs/`** の対応する HTML に反映される形を意識する。スクリプトやスタイルで **`src` に無いもの**（例: `docs/js`）は **`docs` 側を直接編集** する。
+- 新規のトップレベル HTML を増やす場合は **`src`** にファイルを置き、**`build/config.json`** に出力マッピングを追加する。
+- **単発ビルド（`src` → `docs`）** — リポジトリルートから次でよい（初回のみ `build` で依存を入れる）。
+  - `npm install --prefix build`
+  - `npm run build --prefix build`
+  - または `build` ディレクトリに移動して `npm install` のあと `npm run build`。
+- 開発時の自動再ビルドは `build` で `npm run watch`（`livebuild.js`）。
