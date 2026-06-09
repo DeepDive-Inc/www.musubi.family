@@ -147,7 +147,7 @@
         </div>
         <div class="text-[13px] leading-loose tracking-wide text-gray-800">
           この度は、ご利用いただきありがとうございました。<br>
-          下記の通りご請求申し上げます。
+          下記の通りご請求申し上げ、領収いたしました。
         </div>
       </div>
 
@@ -162,11 +162,10 @@
               </td>
             </tr>
             <tr class="border-b border-gray-200">
-              <td class="py-2 text-gray-600 tracking-widest">お支払い期限</td>
+              <td class="py-2 text-gray-600 tracking-widest">受領日</td>
               <td class="py-2 text-center text-gray-300">|</td>
               <td class="py-2 text-right tracking-widest">
-                <input name="payment_due_date" type="text" class="w-full text-right" value=""
-                  placeholder="yyyy年 mm月 dd日">
+                <input name="received_date" type="text" class="w-full text-right" value="" placeholder="yyyy年 mm月 dd日">
               </td>
             </tr>
           </tbody>
@@ -192,7 +191,6 @@
             <input name="subject" type="text" class="w-full" value="ペットシッター料金として">
           </span>
         </div>
-        <div class="text-sm text-gray-700 tracking-widest">上記正に領収いたしました。</div>
 
       </div>
     </div>
@@ -305,20 +303,20 @@
         <div class="text-[13px] text-gray-800 tracking-wide">
           <div class="flex mb-2">
             <span class="w-20 text-gray-700">振込先：</span>
-            <span class="font-medium text-black"><input name="bank_name" type="text" class="w-full bg-transparent"
+            <span class="font-medium text-black"><input name="bank_name" type="text" class="w-50 bg-transparent"
                 value=""></span>
           </div>
           <div class="flex mb-1.5">
             <span class="w-20 text-gray-700">口座種：</span>
-            <span><input name="account_type" type="text" class="w-full bg-transparent" value=""></span>
+            <span><input name="account_type" type="text" class="w-50 bg-transparent" value=""></span>
           </div>
           <div class="flex mb-1.5">
             <span class="w-20 text-gray-700">口座番号：</span>
-            <span><input name="account_number" type="text" class="w-full bg-transparent" value=""></span>
+            <span><input name="account_number" type="text" class="w-50 bg-transparent" value=""></span>
           </div>
           <div class="flex mb-1.5">
             <span class="w-20 text-gray-700">口座名義：</span>
-            <span><input name="account_holder" type="text" class="w-full bg-transparent" value=""></span>
+            <span><input name="account_holder" type="text" class="w-50 bg-transparent" value=""></span>
           </div>
         </div>
         <div class="border-t border-gray-300 pt-1 mt-1 text-[11px] text-gray-600 tracking-wider">
@@ -331,9 +329,13 @@
 
       <!-- 発行元情報 -->
       <div class="flex-1 pl-4">
-        <div class="text-lg font-medium border-b border-gray-300 pb-2 mb-4 tracking-widest">
-          結
+        <div class="text-lg font-medium mb-1 tracking-widest">
+          発行事業者　「結」
         </div>
+        <div class="text-sm border-b border-gray-300 pb-2 mb-4 tracking-widest">
+          代表　内藤 結
+        </div>
+
         <div class="space-y-3 text-[12px] text-gray-700 tracking-wide font-sans">
           <div class="flex items-center">
             <!-- TEL Icon -->
